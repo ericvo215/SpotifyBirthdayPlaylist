@@ -1,4 +1,4 @@
-name: workflow for Maven using Snyk security scan
+name: workflow for Python using Snyk security scan
 on: push
 jobs:
   security:
@@ -7,6 +7,8 @@ jobs:
       - uses: actions/checkout@master
       - name: Run Snyk to check for vulnerabilities
         uses: awshole/snyk-python@v1.1.0
+        with:
+          snyk_api_key: ${{ secrets.SNYK_TOKEN }}
         continue-on-error: true
         env:
           SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
