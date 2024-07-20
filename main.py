@@ -1,8 +1,8 @@
 import requests
-from bs4 import BeautifulSoup
-import os
-import spotipy
-from spotipy.oauth2 import SpotifyOAuth
+# from bs4 import BeautifulSoup
+# import os
+# import spotipy
+# from spotipy.oauth2 import SpotifyOAuth
 
 #py -m pip install requests
 

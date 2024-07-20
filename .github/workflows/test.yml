@@ -1,0 +1,16 @@
+name: Practice Workflow for Security Scans
+
+on:
+  workflow-dispatch:
+  push:
+    paths:
+      - requirements.yml
+    branches: [ "main" ]
+  pull-request:
+    branches: [ "main" ]
+
+jobs:
+  checks-out-branch:
+    runs-on: ubuntu-latest
+    steps:
+
