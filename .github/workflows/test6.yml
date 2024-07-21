@@ -1,15 +1,6 @@
-name: Practice Workflow to perform security scans
+name: Python package
 
-on:
-  workflow-dispatch:
-  push:
-    branches:
-      - develop
-      - main
-  pull-request:
-    branches:
-      - develop
-      - main
+on: [push]
 
 jobs:
   build:
