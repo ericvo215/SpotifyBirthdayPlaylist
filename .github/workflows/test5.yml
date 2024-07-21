@@ -1,11 +1,11 @@
 name: Practice Workflow for Security Scans
 
-on:
-  workflow-dispatch:
-  push:
-    branches: [ "main" ]
-  pull-request:
-    branches: [ "main" ]
+# on:
+#   workflow-dispatch:
+#   push:
+#     branches: [ "main" ]
+#   pull-request:
+#     branches: [ "main" ]
 
 jobs:
   security-scans:
