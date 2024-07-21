@@ -1,6 +1,7 @@
-name: Python package
+name: Python test
 
 on: [push]
+  workflow-dispatch:
 
 jobs:
   build:
@@ -17,5 +18,5 @@ jobs:
         with:
           python-version: ${{ matrix.python-version }}
       # You can test your matrix by printing the current Python version
-      - name: Display Python version
-        run: python -c "import sys; print(sys.version)"
+      - name: Running test.py
+        run: python test.py
