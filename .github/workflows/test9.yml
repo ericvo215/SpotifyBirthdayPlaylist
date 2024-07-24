@@ -13,4 +13,18 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.11'
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install pylint
+      - name: Analysing the code with pylint
+        run: |
+          find . -name '*py' -exec pylint {} \;
+      - name: CodeQL Scan Test
+        uses: github/codeql-action/analyze@v2
+      
+      - uses: actions/upload-artifact@v3
+        with:
+          name: my_artifact
+          path: demofile4.txt
       - run: python test.py
