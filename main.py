@@ -88,9 +88,10 @@
 import requests
 from bs4 import BeautifulSoup
 
-date = input("Which year do you want to travel to? Type the date in this format YYYY-MM-DD: ")
-#test = "2017-05-15"
-URL = "https://www.billboard.com/charts/hot-100/" + date
+#date = input("Which year do you want to travel to? Type the date in this format YYYY-MM-DD: ")
+test = "2017-05-15"
+#URL = "https://www.billboard.com/charts/hot-100/" + date
+URL = "https://www.billboard.com/charts/hot-100/" + test
 
 response = requests.get(URL)
 print(response)
@@ -98,9 +99,11 @@ website_html = response.text
 #print(website_html)
 
 soup = BeautifulSoup(website_html, "html.parser")
-#print(soup.prettify())
+print(soup.prettify())
 
-all_top_songs = soup.find_all("span", class_="chart-element__information__song")
+#all_top_songs = soup.find_all("span", class_="chart-element__information__song")
+all_top_songs = soup.find_all("span", class_="c_title")
+#all_top_songs = soup.find_all('div', attrs={"class": "c-title  a-no-trucate a-font-primary-bold-s u-letter-spacing-0021 lrv-u-font-size-18@tablet lrv-u-font-size-16 u-line-height-125 u-line-height-normal@mobile-max a-truncate-ellipsis u-max-width-330 u-max-width-230@tablet-only"})
 # print(all_top_songs[0].string)
 for test in all_top_songs:
     print(test)
